@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply text-white;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-full transition-all hover:bg-blue-600 shadow-lg hover:shadow-xl;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add smooth transition for hover effects */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Add a subtle hover effect for buttons */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhance typography */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+/* Add a subtle text shadow to headers for better contrast */
+h1, h2, h3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust background colors for better visibility on gradient */
+.bg-gray-800 {
+  @apply bg-opacity-70;
+}
+
+.bg-gray-900 {
+  @apply bg-opacity-80;
+}
+
+/* Add styles for the About page */
+.about-section {
+  @apply relative overflow-hidden;
+}
+
+.about-section::before {
+  content: '';
+  @apply absolute inset-0 opacity-10 z-0;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNMzAgMzBtLTI4LjUgMGEyOC41IDI4LjUgMCAxIDAgNTcgMGEyOC41IDI4LjUgMCAxIDAgLTU3IDBNMzAgMzBtLTI3LjUgMGEyNy41IDI3LjUgMCAxIDAgNTUgMGEyNy41IDI3LjUgMCAxIDAgLTU1IDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==');
+  background-repeat: repeat;
+  animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+.about-icon {
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.about-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.about-divider {
+  @apply w-16 h-1 inline-block;
+  animation: expandWidth 2s ease-in-out infinite;
+}
+
+@keyframes expandWidth {
+  0%, 100% {
+    width: 4rem;
+  }
+  50% {
+    width: 6rem;
+  }
+}
+
+/* Enhanced styles for user experience */
+.hover-effect {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.hover-effect:hover {
+  @apply shadow-xl bg-opacity-90;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.btn-book-demo {
+  @apply bg-blue-500 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 ease-in-out hover:bg-blue-600 shadow-lg hover:shadow-xl;
+}
+
+.sticky-header {
+  @apply fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 shadow-md transition-all duration-300;
+}
+
+/* New styles for the improved About page */
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+.group:hover .group-hover\:opacity-70 {
+  opacity: 0.7;
+}
+
+/* Additional styles for the updated About page */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.group:hover .group-hover\:translate-y-0 {
+  transform: translateY(0);
+}
+
+/* New animations for the redesigned About page */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* New styles for the updated Services page */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.service-box {
+  transition: all 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.hover-glow:hover {
+  animation: glow 2s infinite;
+}
+
+/* New styles for the updated Floating CTA buttons */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1s ease-in-out;
+}
